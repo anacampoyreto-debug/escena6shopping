@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Olivia · Scene 6 · Going Shopping PRO</title>
+<style>
+:root{
+  --bg:#0f1115;--panel:#171b22;--paper:#f3ecdc;--ink:#e9e1d0;--muted:#b7ab90;
+  --gold:#b69352;--gold2:#d6be88;--line:#2b313c;--ok:#2e8b57;--bad:#b44a4a;
+  --shadow:0 14px 34px rgba(0,0,0,.35)
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:
+radial-gradient(circle at top, rgba(182,147,82,.09), transparent 26%),
+linear-gradient(180deg,#10131a 0%,#0e1014 100%);
+color:var(--ink);font-family:Georgia,"Times New Roman",serif}
+.wrap{width:min(1120px,94%);margin:28px auto 60px}
+.hero,.section{background:linear-gradient(180deg,rgba(23,27,34,.96),rgba(20,24,31,.98));border:1px solid rgba(214,190,136,.12);border-radius:22px;box-shadow:var(--shadow)}
+.hero{padding:28px 24px 22px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg, rgba(214,190,136,.06), transparent 34%, transparent 68%, rgba(214,190,136,.04));pointer-events:none}
+.eyebrow{display:inline-block;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2);font-size:.78rem;margin-bottom:10px}
+h1{margin:0 0 8px;font-size:clamp(1.8rem,4vw,3rem);line-height:1.05;color:var(--paper)}
+.sub{margin:0;color:var(--muted);font-size:1.03rem;max-width:940px}
+.note{margin-top:18px;padding:14px 16px;border-left:4px solid var(--gold);background:rgba(214,190,136,.06);color:#f2e8d2;border-radius:12px}
+.stats{margin-top:18px;display:grid;grid-template-columns:repeat(4,minmax(120px,1fr));gap:12px}
+.stat{background:linear-gradient(180deg, rgba(243,236,220,.06), rgba(243,236,220,.03));border:1px solid rgba(214,190,136,.14);border-radius:16px;padding:14px}
+.k{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}.v{font-size:1.5rem;margin-top:6px;color:var(--paper)}
+.grid{display:grid;gap:18px;margin-top:22px}.section{padding:22px 18px 18px}
+h2{margin:0 0 14px;font-size:1.35rem;color:var(--paper);display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.tag{display:inline-block;padding:5px 10px;border-radius:999px;background:rgba(182,147,82,.13);color:var(--gold2);font-size:.78rem}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:14px}
+.card,.exercise,.library{background:linear-gradient(180deg, rgba(243,236,220,.05), rgba(243,236,220,.02));border:1px solid rgba(214,190,136,.10);border-radius:18px;padding:16px 14px}
+.line-en{font-size:1.15rem;color:var(--paper);line-height:1.35;margin:0 0 10px}.line-es{font-size:1rem;color:#d8ccb2;margin:0 0 8px}
+.phon{font-family:"Trebuchet MS",Arial,sans-serif;font-size:.98rem;color:var(--gold2);line-height:1.4}
+.micro,.small,.result,.feedback,.footer,.status{font-size:.92rem;color:var(--muted)}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+button{border:1px solid rgba(214,190,136,.18);background:linear-gradient(180deg,#2a3441,#202832);color:var(--paper);padding:10px 14px;border-radius:12px;cursor:pointer;font-weight:700}
+button:hover{filter:brightness(1.08)} .ghost{background:transparent}.tiny{font-size:.9rem;padding:8px 12px}.speak{background:linear-gradient(180deg,#6a4d1f,#4d3818)}
+.pill{display:inline-block;margin-top:10px;padding:6px 10px;border-radius:999px;background:rgba(88,119,168,.12);color:#afc4e8;font-size:.82rem}
+.options{display:grid;gap:10px;margin-top:12px}.opt{padding:12px 12px;border-radius:14px;border:1px solid var(--line);background:#141922;cursor:pointer;text-align:left}
+.opt.correct{background:rgba(46,139,87,.16);border-color:rgba(46,139,87,.55)} .opt.wrong{background:rgba(180,74,74,.16);border-color:rgba(180,74,74,.55)}
+input[type=text],textarea{width:100%;background:#0f141b;color:var(--paper);border:1px solid #313948;border-radius:12px;padding:12px 12px;font-size:1rem}
+textarea{min-height:110px;resize:vertical}.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}.three{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.soft{background:rgba(214,190,136,.05);border:1px dashed rgba(214,190,136,.18);border-radius:16px;padding:14px}
+.library{position:relative}.library:before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(180deg,#5e3e12,#b69352);border-radius:18px 0 0 18px}
+.scorebar{height:14px;background:#11151c;border-radius:999px;overflow:hidden;border:1px solid rgba(214,190,136,.12)} .fill{height:100%;width:0;background:linear-gradient(90deg,#8a6a34,#d2b77d)}
+.levels{display:flex;justify-content:space-between;gap:8px;font-size:.82rem;color:var(--muted);margin-top:8px;flex-wrap:wrap}
+.status{margin-top:10px;padding:10px 12px;border:1px solid rgba(214,190,136,.12);border-radius:12px;background:rgba(243,236,220,.03)}
+@media (max-width:850px){.two,.three,.stats{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<section class="hero">
+  <div class="eyebrow">Scene 6 · GitHub Pages · Olivia at the checkout</div>
+  <h1>🛍️ Block 2 · Going Shopping PRO</h1>
+  <p class="sub">Escena 6: Olivia llega a la caja. Ahora trabajas pago, receipt, cash, card, total y la conversación final de compra. Pero la caja también deja huellas: una hora, un ticket, una forma de pagar... y una nueva pista.</p>
+  <div class="note"><strong>Inmersión de personaje:</strong> Olivia sigue siendo sobria incluso al pagar. No habla de más, pero escucha todo. En esta escena aprenderás a cerrar una compra y a leer el valor narrativo de un recibo.</div>
+  <div class="stats">
+    <div class="stat"><div class="k">Points</div><div class="v" id="points">0</div></div>
+    <div class="stat"><div class="k">Correct</div><div class="v" id="correct">0</div></div>
+    <div class="stat"><div class="k">Streak</div><div class="v" id="streak">0</div></div>
+    <div class="stat"><div class="k">Level</div><div class="v" id="levelName">Starter</div></div>
+  </div>
+</section>
+
+<section class="section" style="margin-top:18px">
+  <h2>🔊 Voz Olivia <span class="tag">más cerrada y exacta</span></h2>
+  <div class="status" id="voiceStatus">La voz mantiene pausas internas. En caja, Olivia suena más breve, precisa y final.</div>
+</section>
+
+<div class="grid">
+  <section class="section">
+    <h2>1) Listen and repeat <span class="tag">pago y receipt</span></h2>
+    <div class="cards" id="phraseCards"></div>
+  </section>
+
+  <section class="section">
+    <h2>2) Shadowing Olivia <span class="tag">cerrar la compra</span></h2>
+    <div class="two">
+      <div class="exercise">
+        <div class="line-en">“I'll pay... by card.”</div>
+        <div class="line-es">“Pagaré... con tarjeta.”</div>
+        <div class="phon">ail pei... bai kard</div>
+        <div class="actions"><button class="speak speak-btn" data-text="I'll pay... by card." data-style="firm">🔊 SPEAK</button></div>
+        <div class="micro">Breve, firme y totalmente natural.</div>
+      </div>
+      <div class="exercise">
+        <div class="line-en">“Could I have... the receipt?”</div>
+        <div class="line-es">“¿Podría tener... el ticket?”</div>
+        <div class="phon">cud ai jav... de ri-SIIT</div>
+        <div class="actions"><button class="speak speak-btn" data-text="Could I have... the receipt?" data-style="measured">🔊 SPEAK</button></div>
+        <div class="micro">Aquí el ticket no es un papel: es una posible prueba.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>3) Choose the meaning <span class="tag">vocabulario de caja</span></h2>
+    <div class="three" id="meaningWrap"></div>
+  </section>
+
+  <section class="section">
+    <h2>4) Complete the sentence <span class="tag">una palabra / dos palabras</span></h2>
+    <div class="cards" id="completeWrap"></div>
+  </section>
+
+  <section class="section">
+    <h2>5) Build the sentence <span class="tag">orden y cierre</span></h2>
+    <div class="cards" id="buildWrap"></div>
+  </section>
+
+  <section class="section">
+    <h2>6) Transform the phrase <span class="tag">de español a inglés Olivia</span></h2>
+    <div class="cards" id="transformWrap"></div>
+  </section>
+
+  <section class="section">
+    <h2>7) Context detective <span class="tag">la pista documental</span></h2>
+    <div class="two">
+      <div class="exercise">
+        <div class="line-en"><strong>Why does Olivia want the receipt?</strong></div>
+        <div class="line-es">¿Por qué quiere Olivia el ticket?</div>
+        <div class="options">
+          <button class="opt context-btn" data-correct="false">Because she likes collecting paper.</button>
+          <button class="opt context-btn" data-correct="true">Because the time, method of payment and item history can become evidence.</button>
+          <button class="opt context-btn" data-correct="false">Because she forgot the price.</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="exercise">
+        <div class="line-en"><strong>What can a receipt reveal in a case?</strong></div>
+        <div class="line-es">¿Qué puede revelar un ticket en un caso?</div>
+        <div class="options">
+          <button class="opt context-btn" data-correct="false">Only the colour of the bag.</button>
+          <button class="opt context-btn" data-correct="true">Time, purchase pattern, store route and whether someone came back later.</button>
+          <button class="opt context-btn" data-correct="false">Whether the cashier liked the customer.</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>8) Mini dialogue <span class="tag">escena 6 completa</span></h2>
+    <div class="library">
+      <div class="cards" id="dialogueWrap"></div>
+      <div style="height:1px;background:linear-gradient(90deg,transparent, rgba(214,190,136,.18), transparent);margin:20px 0"></div>
+      <button class="speak" id="fullDialogueBtn">✅ SPEAK FULL DIALOGUE (+20)</button>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>9) Quick test <span class="tag">control rápido</span></h2>
+    <div class="two" id="quickWrap"></div>
+  </section>
+
+  <section class="section">
+    <h2>10) Act like Olivia <span class="tag">producción libre</span></h2>
+    <div class="cards">
+      <div class="exercise">
+        <div class="line-en"><strong>Task 1</strong> · Say how you pay</div>
+        <div class="line-es">Di cómo vas a pagar.</div>
+        <textarea placeholder="Ejemplo: I'll pay by card."></textarea>
+        <div class="actions"><button class="speak textarea-speak-btn">🔊 SPEAK MY SENTENCE</button></div>
+      </div>
+      <div class="exercise">
+        <div class="line-en"><strong>Task 2</strong> · Ask for the receipt</div>
+        <div class="line-es">Pide el ticket de forma natural.</div>
+        <div class="soft">Modelo: <em>Could I have the receipt?</em></div>
+        <textarea placeholder="Escribe tu versión Olivia"></textarea>
+        <div class="actions"><button class="speak textarea-speak-btn">🔊 SPEAK MY SENTENCE</button></div>
+      </div>
+      <div class="exercise">
+        <div class="line-en"><strong>Task 3</strong> · Read the clue</div>
+        <div class="line-es">Haz una frase sobre lo que un ticket puede decirte.</div>
+        <textarea placeholder="Ejemplo: The receipt tells me more than the dress."></textarea>
+        <div class="actions"><button class="speak textarea-speak-btn">🔊 SPEAK MY SENTENCE</button></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>11) Vocabulary map <span class="tag">scene 6</span></h2>
+    <div class="three">
+      <div class="card"><div class="line-en">receipt</div><div class="line-es">ticket</div><div class="phon">ri-SIIT</div></div>
+      <div class="card"><div class="line-en">cash</div><div class="line-es">efectivo</div><div class="phon">kash</div></div>
+      <div class="card"><div class="line-en">card</div><div class="line-es">tarjeta</div><div class="phon">kard</div></div>
+      <div class="card"><div class="line-en">pay</div><div class="line-es">pagar</div><div class="phon">pei</div></div>
+      <div class="card"><div class="line-en">total</div><div class="line-es">total</div><div class="phon">TO-tal</div></div>
+      <div class="card"><div class="line-en">checkout</div><div class="line-es">caja / pago</div><div class="phon">CHEK-aut</div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>12) Useful model sentences <span class="tag">repite a diario</span></h2>
+    <div class="cards">
+      <div class="card"><div class="line-en">I'll pay... by card.</div><div class="line-es">Pagaré... con tarjeta.</div><div class="phon">ail pei... bai kard</div><div class="actions"><button class="speak speak-btn" data-text="I'll pay... by card." data-style="firm">🔊 SPEAK</button></div></div>
+      <div class="card"><div class="line-en">Could I have... the receipt?</div><div class="line-es">¿Podría tener... el ticket?</div><div class="phon">cud ai jav... de ri-SIIT</div><div class="actions"><button class="speak speak-btn" data-text="Could I have... the receipt?" data-style="measured">🔊 SPEAK</button></div></div>
+      <div class="card"><div class="line-en">What's the total?</div><div class="line-es">¿Cuál es el total?</div><div class="phon">uots de TO-tal</div><div class="actions"><button class="speak speak-btn" data-text="What's the total?" data-style="neutral">🔊 SPEAK</button></div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>13) How to get a 10 <span class="tag">modo actriz</span></h2>
+    <div class="library">
+      <ul>
+        <li>La caja es breve: habla con frases cortas y claras.</li>
+        <li>Practica <strong>pay by card</strong> y <strong>pay in cash</strong>.</li>
+        <li>No olvides el ticket: receipt es vocabulario clave del tema.</li>
+        <li>En Olivia, incluso una compra cerrada deja una pregunta abierta.</li>
+        <li>Haz una frase logística y otra interpretativa seguidas.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>🏅 Score system</h2>
+    <div class="scorebar"><div class="fill" id="fillBar"></div></div>
+    <div class="levels"><span>Starter</span><span>Shopper</span><span>Communicator</span><span>Strong B1</span><span>Level 10</span></div>
+    <div class="footer"><strong>Escena 6:</strong> aquí trabajas el vocabulario real del pago y además conviertes el receipt en una pista narrativa.</div>
+  </section>
+</div>
+</div>
+
+<script>
+const state={points:0,correct:0,streak:0};
+const phrases=[
+{en:"I'll pay... by card.",es:"Pagaré... con tarjeta.",phon:"ail pei... bai kard",note:"Natural, breve y muy útil.",voice:"firm"},
+{en:"Could I have... the receipt?",es:"¿Podría tener... el ticket?",phon:"cud ai jav... de ri-SIIT",note:"Clave total en shopping y en el caso.",voice:"measured"},
+{en:"What's the total?",es:"¿Cuál es el total?",phon:"uots de TO-tal",note:"Muy real en una caja.",voice:"neutral"},
+{en:"Can I pay... in cash?",es:"¿Puedo pagar... en efectivo?",phon:"can ai pei... in kash",note:"La otra gran forma de pago.",voice:"neutral"},
+{en:"She paid in cash... again.",es:"Pagó en efectivo... otra vez.",phon:"shi peid in kash... a-GEN",note:"El método de pago se vuelve pista.",voice:"analytical"},
+{en:"The receipt tells me... more than the dress.",es:"El ticket me dice... más que el vestido.",phon:"de ri-SIIT tels mi... mor dan de dres",note:"Muy Olivia: lee documentos como si fueran personajes.",voice:"analytical"}
+];
+const meaning=[
+{word:"receipt",phon:"ri-SIIT",correct:"ticket",options:["ticket","rebaja","probador"]},
+{word:"cash",phon:"kash",correct:"efectivo",options:["tarjeta","efectivo","monedero"]},
+{word:"card",phon:"kard",correct:"tarjeta",options:["tarjeta","bolsa","talla"]},
+{word:"pay",phon:"pei",correct:"pagar",options:["pagar","probarse","cambiar"]},
+{word:"total",phon:"TO-tal",correct:"total",options:["total","devolución","modelo"]},
+{word:"checkout",phon:"CHEK-aut",correct:"caja / pago",options:["almacén","caja / pago","pasillo"]}
+];
+const complete=[
+{prompt:"I'll ______... by card.",es:"Pagaré... con tarjeta.",phon:"ail pei... bai kard",accepted:["pay"],mode:"write one word",voice:"firm",speak:"I'll pay... by card."},
+{prompt:"Could I have... the ______?",es:"¿Podría tener... el ticket?",phon:"cud ai jav... de ri-SIIT",accepted:["receipt"],mode:"write one word",voice:"measured",speak:"Could I have... the receipt?"},
+{prompt:"What's the ______?",es:"¿Cuál es el total?",phon:"uots de TO-tal",accepted:["total"],mode:"write one word",voice:"neutral",speak:"What's the total?"},
+{prompt:"Can I pay... in ______?",es:"¿Puedo pagar... en efectivo?",phon:"can ai pei... in kash",accepted:["cash"],mode:"write one word",voice:"neutral",speak:"Can I pay... in cash?"},
+{prompt:"by ______",es:"con tarjeta",phon:"bai kard",accepted:["card"],mode:"write one word",voice:"firm",speak:"by card"},
+{prompt:"the ______ tells me more",es:"el ticket me dice más",phon:"de ri-SIIT tels mi mor",accepted:["receipt"],mode:"write one word",voice:"analytical",speak:"the receipt tells me more"}
+];
+const build=[
+{scramble:"pay / card / by / I'll",solution:"I'll pay by card.",es:"Pagaré con tarjeta.",phon:"ail pei bai kard",voice:"firm"},
+{scramble:"the / could / receipt / have / I",solution:"Could I have the receipt?",es:"¿Podría tener el ticket?",phon:"cud ai jav de ri-SIIT",voice:"measured"},
+{scramble:"the / what's / total",solution:"What's the total?",es:"¿Cuál es el total?",phon:"uots de TO-tal",voice:"neutral"},
+{scramble:"in / pay / cash / can / I",solution:"Can I pay in cash?",es:"¿Puedo pagar en efectivo?",phon:"can ai pei in kash",voice:"neutral"}
+];
+const transform=[
+{es:"Pagaré con tarjeta.",target:"I'll pay by card.",hint:"Usa I'll pay..."},
+{es:"¿Podría tener el ticket?",target:"Could I have the receipt?",hint:"Usa Could I have..."},
+{es:"¿Cuál es el total?",target:"What's the total?",hint:"Usa What's the..."},
+{es:"¿Puedo pagar en efectivo?",target:"Can I pay in cash?",hint:"Usa pay in cash"}
+];
+const dialogue=[
+{speaker:"Cashier",tone:"RP · profesional",en:"Are you paying by cash or card?",es:"¿Pagas en efectivo o con tarjeta?",phon:"a yu pei-ing bai kash or kard",voice:"neutral"},
+{speaker:"Olivia",tone:"RP · breve",en:"I'll pay... by card.",es:"Pagaré... con tarjeta.",phon:"ail pei... bai kard",voice:"firm"},
+{speaker:"Cashier",tone:"RP · caja",en:"That comes to forty-two pounds.",es:"Son cuarenta y dos libras.",phon:"dat cams tu FOR-ti tu paunds",voice:"neutral"},
+{speaker:"Olivia",tone:"RP · exacta",en:"What's the total... with the bag?",es:"¿Cuál es el total... con la bolsa?",phon:"uots de TO-tal... uiz de bag",voice:"measured"},
+{speaker:"Cashier",tone:"RP · responde",en:"Forty-three pounds.",es:"Cuarenta y tres libras.",phon:"FOR-ti zri paunds",voice:"neutral"},
+{speaker:"Olivia",tone:"RP · parece logística",en:"Could I have... the receipt?",es:"¿Podría tener... el ticket?",phon:"cud ai jav... de ri-SIIT",voice:"measured"},
+{speaker:"Cashier",tone:"RP · distraído",en:"Of course. Funny... the same dress was bought twice today.",es:"Claro. Curioso... el mismo vestido se compró dos veces hoy.",phon:"ov kors. FAN-i... de seim dres uoz bot tuais tu-dei",voice:"neutral"},
+{speaker:"Olivia",tone:"RP · ve la pista",en:"Twice... today?",es:"¿Dos veces... hoy?",phon:"tuais... tu-dei",voice:"analytical"}
+];
+const quick=[
+{q:"Which phrase is best for asking for the ticket?",es:"¿Qué frase es mejor para pedir el ticket?",options:["Could I have the receipt?","I receipt now.","Give me total bag."],correct:"Could I have the receipt?"},
+{q:"Why is the receipt important in this scene?",es:"¿Por qué es importante el ticket en esta escena?",options:["Because it proves style.","Because it may reveal timing and repeated purchases.","Because it changes the colour of the dress."],correct:"Because it may reveal timing and repeated purchases."}
+];
+
+let preferredVoice=null;
+function setVoiceStatus(msg){document.getElementById('voiceStatus').textContent=msg}
+function findBestVoice(){
+  if(!window.speechSynthesis) return null;
+  const voices=speechSynthesis.getVoices()||[];
+  return voices.find(v=>/en-GB/i.test(v.lang)&&/libby|sonia|kate|female|serena|susan/i.test(v.name))
+      || voices.find(v=>/en-GB/i.test(v.lang))
+      || voices.find(v=>/en-US|en_AU|en-CA|en/i.test(v.lang))
+      || null;
+}
+function initVoice(){
+  if(!window.speechSynthesis){
+    setVoiceStatus('Tu navegador no soporta voz. Prueba con Chrome o Edge.');
+    return;
+  }
+  preferredVoice=findBestVoice();
+  if(preferredVoice) setVoiceStatus('Voz lista: '+preferredVoice.name+' ('+preferredVoice.lang+'). Pulsa cualquier SPEAK.');
+  else setVoiceStatus('No se encontró una voz inglesa concreta. Se usará la voz por defecto disponible.');
+}
+function splitForSpeech(text){
+  const t=String(text).trim();
+  if(t.includes('...')){
+    const parts=t.split('...').map(s=>s.trim()).filter(Boolean);
+    return parts.length ? parts : [t];
+  }
+  if(t.includes(' or ')){
+    const parts=t.split(' or ');
+    if(parts.length===2) return [parts[0], 'or ' + parts[1]];
+  }
+  return [t];
+}
+function styleUtterance(u,style){
+  u.lang='en-GB';
+  if(preferredVoice) u.voice=preferredVoice;
+  u.pitch=0.90; u.rate=0.82; u.volume=1;
+  if(style==='neutral'){u.rate=0.84;u.pitch=0.92}
+  if(style==='measured'){u.rate=0.79;u.pitch=0.88}
+  if(style==='analytical'){u.rate=0.77;u.pitch=0.86}
+  if(style==='firm'){u.rate=0.80;u.pitch=0.88}
+}
+function speakInParts(text,style='neutral'){
+  if(!window.speechSynthesis){
+    alert('Tu navegador no soporta voz. Prueba con Chrome o Edge.');
+    return;
+  }
+  preferredVoice=findBestVoice() || preferredVoice;
+  const parts=splitForSpeech(text);
+  speechSynthesis.cancel();
+  let delay=0;
+  parts.forEach((part,i)=>{
+    const wait=i===0?0:420;
+    delay+=wait;
+    setTimeout(()=>{
+      const u=new SpeechSynthesisUtterance(part);
+      styleUtterance(u,style);
+      speechSynthesis.speak(u);
+    },delay);
+    delay+=Math.max(900, part.length*70);
+  });
+}
+function updateScore(add=0,good=false){
+  state.points+=add;
+  if(good){state.correct+=1;state.streak+=1}else if(add<0){state.streak=0}
+  document.getElementById('points').textContent=state.points;
+  document.getElementById('correct').textContent=state.correct;
+  document.getElementById('streak').textContent=state.streak;
+  let level='Starter';
+  if(state.points>=110) level='Level 10';
+  else if(state.points>=75) level='Strong B1';
+  else if(state.points>=45) level='Communicator';
+  else if(state.points>=20) level='Shopper';
+  document.getElementById('levelName').textContent=level;
+  document.getElementById('fillBar').style.width=Math.min(100,(state.points/110)*100)+'%';
+}
+function normalize(s){return s.toLowerCase().trim().replace(/[.,!?]/g,'').replace(/\s+/g,' ')}
+function escapeHtml(str){
+  return String(str).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+function parseEscapedJSON(s){
+  const txt=s.replace(/&quot;/g,'"').replace(/&amp;/g,'&');
+  return JSON.parse(txt);
+}
+function renderPhrases(){
+  const wrap=document.getElementById('phraseCards');
+  phrases.forEach(p=>{
+    const card=document.createElement('div');
+    card.className='card';
+    card.innerHTML='<p class="line-en">'+p.en+'</p><p class="line-es">'+p.es+'</p><div class="phon">'+p.phon+'</div>'
+    +'<div class="actions"><button class="speak speak-btn" data-text="'+escapeHtml(p.en)+'" data-style="'+p.voice+'">🔊 SPEAK</button><button class="tiny ghost practice-btn">+2 practice</button></div>'
+    +'<div class="micro">'+p.note+'</div><div class="pill">Tono Olivia · '+p.voice+'</div>';
+    wrap.appendChild(card);
+  });
+}
+function renderMeaning(){
+  const wrap=document.getElementById('meaningWrap');
+  meaning.forEach((m,idx)=>{
+    const box=document.createElement('div');
+    box.className='exercise';
+    let optionsHtml='';
+    m.options.forEach(o=>{optionsHtml+='<button class="opt meaning-btn" data-group="m'+idx+'" data-correct="'+escapeHtml(m.correct)+'" data-selected="'+escapeHtml(o)+'">'+o+'</button>'});
+    box.innerHTML='<div class="line-en"><strong>'+m.word+'</strong></div><div class="phon">'+m.phon+'</div><div class="options">'+optionsHtml+'</div><div class="feedback"></div>';
+    wrap.appendChild(box);
+  });
+}
+function renderComplete(){
+  const wrap=document.getElementById('completeWrap');
+  complete.forEach(c=>{
+    const box=document.createElement('div');
+    box.className='exercise';
+    box.innerHTML='<div class="line-en">'+c.prompt+'</div><div class="line-es">'+c.es+'</div><div class="phon">'+c.phon+'</div>'
+    +'<div class="actions"><button class="speak speak-btn" data-text="'+escapeHtml(c.speak)+'" data-style="'+c.voice+'">🔊 SPEAK</button></div>'
+    +'<div class="small">'+c.mode+'</div><input type="text" placeholder="Write your answer">'
+    +'<div class="actions"><button class="check-complete-btn" data-accepted="'+escapeHtml(JSON.stringify(c.accepted))+'">Check</button></div><div class="result"></div>';
+    wrap.appendChild(box);
+  });
+}
+function renderBuild(){
+  const wrap=document.getElementById('buildWrap');
+  build.forEach(b=>{
+    const box=document.createElement('div');
+    box.className='exercise';
+    box.innerHTML='<div class="line-en">'+b.scramble+'</div><div class="line-es">'+b.es+'</div><div class="phon">'+b.phon+'</div>'
+    +'<input type="text" placeholder="Write the full sentence">'
+    +'<div class="actions"><button class="speak speak-btn" data-text="'+escapeHtml(b.solution)+'" data-style="'+b.voice+'">🔊 SPEAK</button><button class="check-build-btn" data-solution="'+escapeHtml(b.solution)+'">Check</button></div><div class="result"></div>';
+    wrap.appendChild(box);
+  });
+}
+function renderTransform(){
+  const wrap=document.getElementById('transformWrap');
+  transform.forEach(t=>{
+    const box=document.createElement('div');
+    box.className='exercise';
+    box.innerHTML='<div class="line-es"><strong>'+t.es+'</strong></div><div class="small">Pista: '+t.hint+'</div>'
+    +'<input type="text" placeholder="Write it in English">'
+    +'<div class="actions"><button class="check-transform-btn" data-target="'+escapeHtml(t.target)+'">Check</button><button class="speak speak-btn" data-text="'+escapeHtml(t.target)+'" data-style="measured">🔊 SPEAK</button></div><div class="result"></div>';
+    wrap.appendChild(box);
+  });
+}
+function renderDialogue(){
+  const wrap=document.getElementById('dialogueWrap');
+  dialogue.forEach(d=>{
+    const card=document.createElement('div');
+    card.className='card';
+    card.innerHTML='<div class="small">'+d.speaker+' · '+d.tone+'</div><p class="line-en">'+d.en+'</p><p class="line-es">'+d.es+'</p><div class="phon">'+d.phon+'</div>'
+    +'<div class="actions"><button class="speak speak-btn" data-text="'+escapeHtml(d.en)+'" data-style="'+d.voice+'">🔊 SPEAK</button></div>';
+    wrap.appendChild(card);
+  });
+}
+function renderQuick(){
+  const wrap=document.getElementById('quickWrap');
+  quick.forEach((q,idx)=>{
+    const box=document.createElement('div');
+    box.className='exercise';
+    let optionsHtml='';
+    q.options.forEach(o=>{optionsHtml+='<button class="opt quick-btn" data-group="q'+idx+'" data-correct="'+escapeHtml(q.correct)+'" data-selected="'+escapeHtml(o)+'">'+o+'</button>'});
+    box.innerHTML='<div class="line-en">'+q.q+'</div><div class="line-es">'+q.es+'</div><div class="options">'+optionsHtml+'</div><div class="feedback"></div>';
+    wrap.appendChild(box);
+  });
+}
+function playFullDialogue(){
+  let delay=0;
+  dialogue.forEach(d=>{
+    setTimeout(()=>speakInParts(d.en,d.voice),delay);
+    delay += Math.max(1800, d.en.length*120);
+  });
+  updateScore(20,true);
+}
+function bindEvents(){
+  document.getElementById('fullDialogueBtn').addEventListener('click',playFullDialogue);
+  document.addEventListener('click',function(e){
+    if(e.target.classList.contains('speak-btn')){
+      speakInParts(e.target.dataset.text, e.target.dataset.style||'neutral');
+    }
+    if(e.target.classList.contains('practice-btn')){
+      if(e.target.dataset.done) return;
+      e.target.dataset.done='1'; e.target.textContent='✓ practiced'; updateScore(2,true);
+    }
+    if(e.target.classList.contains('meaning-btn')){
+      const ex=e.target.closest('.exercise'); if(ex.dataset.done) return; ex.dataset.done='1';
+      const correct=e.target.dataset.correct;
+      ex.querySelectorAll('.meaning-btn').forEach(b=>{
+        if(b.dataset.correct===b.dataset.selected) b.classList.add('correct');
+        if(b===e.target && b.dataset.selected!==correct) b.classList.add('wrong');
+        b.disabled=true;
+      });
+      const f=ex.querySelector('.feedback');
+      if(e.target.dataset.selected===correct){f.textContent='✅ Correcto'; updateScore(5,true)}
+      else {f.textContent='❌ La correcta era: '+correct; updateScore(-1,false)}
+    }
+    if(e.target.classList.contains('check-complete-btn')){
+      const ex=e.target.closest('.exercise'); if(ex.dataset.done) return; ex.dataset.done='1';
+      const accepted=parseEscapedJSON(e.target.dataset.accepted);
+      const val=normalize(ex.querySelector('input').value);
+      const ok=accepted.map(normalize).includes(val);
+      const r=ex.querySelector('.result');
+      if(ok){r.textContent='✅ Correcto'; updateScore(6,true)}
+      else {r.textContent='❌ Revisa e inténtalo otra vez en la siguiente ronda'; updateScore(-1,false)}
+    }
+    if(e.target.classList.contains('check-build-btn')){
+      const ex=e.target.closest('.exercise'); if(ex.dataset.done) return; ex.dataset.done='1';
+      const solution=e.target.dataset.solution;
+      const ok=normalize(ex.querySelector('input').value)===normalize(solution);
+      const r=ex.querySelector('.result');
+      if(ok){r.textContent='✅ Correcto'; updateScore(7,true)}
+      else {r.textContent='❌ Respuesta esperada: '+solution; updateScore(-1,false)}
+    }
+    if(e.target.classList.contains('check-transform-btn')){
+      const ex=e.target.closest('.exercise'); if(ex.dataset.done) return; ex.dataset.done='1';
+      const target=e.target.dataset.target;
+      const ok=normalize(ex.querySelector('input').value)===normalize(target);
+      const r=ex.querySelector('.result');
+      if(ok){r.textContent='✅ Correcto'; updateScore(8,true)}
+      else {r.textContent='❌ Modelo: '+target; updateScore(-1,false)}
+    }
+    if(e.target.classList.contains('context-btn')){
+      const ex=e.target.closest('.exercise'); if(ex.dataset.done) return; ex.dataset.done='1';
+      const ok=e.target.dataset.correct==='true'; const f=ex.querySelector('.feedback');
+      ex.querySelectorAll('.context-btn').forEach(b=>b.disabled=true);
+      if(ok){e.target.classList.add('correct'); f.textContent='✅ Exacto. El receipt convierte una compra en secuencia verificable.'; updateScore(6,true)}
+      else {e.target.classList.add('wrong'); f.textContent='❌ No. Piensa en tiempo, pago y repetición.'; updateScore(-1,false)}
+      ex.querySelectorAll('.context-btn').forEach(b=>{if(b.dataset.correct==='true') b.classList.add('correct')});
+    }
+    if(e.target.classList.contains('quick-btn')){
+      const ex=e.target.closest('.exercise'); if(ex.dataset.done) return; ex.dataset.done='1';
+      const correct=e.target.dataset.correct;
+      ex.querySelectorAll('.quick-btn').forEach(b=>{
+        if(b.dataset.selected===correct) b.classList.add('correct');
+        if(b===e.target && b.dataset.selected!==correct) b.classList.add('wrong');
+        b.disabled=true;
+      });
+      const f=ex.querySelector('.feedback');
+      if(e.target.dataset.selected===correct){f.textContent='✅ Bien'; updateScore(7,true)}
+      else {f.textContent='❌ La correcta era: '+correct; updateScore(-1,false)}
+    }
+    if(e.target.classList.contains('textarea-speak-btn')){
+      const ta=e.target.closest('.exercise').querySelector('textarea');
+      if(!ta.value.trim()){ alert('Escribe primero tu frase.'); return; }
+      speakInParts(ta.value.trim(),'measured'); updateScore(3,true);
+    }
+  }, {passive:true});
+}
+renderPhrases();
+renderMeaning();
+renderComplete();
+renderBuild();
+renderTransform();
+renderDialogue();
+renderQuick();
+bindEvents();
+updateScore(0,false);
+initVoice();
+if(window.speechSynthesis){
+  setTimeout(initVoice,200);
+  setTimeout(initVoice,800);
+}
+</script>
+</body>
+</html>
